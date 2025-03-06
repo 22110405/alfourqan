@@ -9,7 +9,6 @@ body {
     direction: rtl;
     text-align: center;
     background-color: #f8f9fa;
-    width: 98.7%;
     height: 110vh;
     background-image: url('imges/WhatsApp\ Image\ 2025-02-21\ at\ 21.02.39_5b4ec0ca.jpg');
     /* Replace with your image path */
@@ -118,6 +117,7 @@ body {
 
 /* إخفاء الروابط في الشاشات الصغيرة */
 @media (max-width: 768px) {
+
     .Logo ul {
         display: none;
         flex-direction: column;
@@ -145,6 +145,10 @@ body {
         position: absolute;
         top: 20px;
         right: 20px;
+        margin-right: 70px;
+    }
+    #stak{
+        margin-right: 100px;
     }
 }
 
@@ -639,3 +643,53 @@ footer a img:hover {
     text-decoration: none;
 }
 
+
+
+
+
+@media (max-width: 1000px) {
+
+    /* تعديل الناف بار عندما يكون عرض الشاشة 1000px أو أقل */
+    .nav-links {
+        flex-direction: column;
+        /* تغيير إلى عمودي */
+        background-color: rgba(0, 0, 0, 0.7);
+        /* تغيير اللون الخلفي */
+        width: 100%;
+        padding: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+        /* يبدأ مخفيًا */
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.show {
+        transform: translateY(0);
+        /* عند الضغط على الهامبرغر يظهر */
+    }
+
+    /* جعل زر الهامبرغر ظاهر */
+    .hamburger {
+        display: block;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+    }
+}
+
+/* تنسيق زر الهامبرغر (الهامبرغر غير ظاهر في الشاشات الكبيرة) */
+.hamburger {
+    display: none;
+}
+
+@media (max-width: 1300px) {
+    .hamburger {
+        display: block;
+    }
+}
